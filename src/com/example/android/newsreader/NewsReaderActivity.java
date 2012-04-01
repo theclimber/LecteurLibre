@@ -195,7 +195,6 @@ public class NewsReaderActivity extends FragmentActivity
      *
      * @param index the index of the selected headline.
      */
-    @Override
     public void onHeadlineSelected(int index) {
         mArtIndex = index;
         if (mIsDualPane) {
@@ -219,7 +218,6 @@ public class NewsReaderActivity extends FragmentActivity
      *
      * @param catIndex the index of the selected news category.
      */
-    @Override
     public void onCategorySelected(int catIndex) {
         setNewsCategory(catIndex);
     }
@@ -237,12 +235,10 @@ public class NewsReaderActivity extends FragmentActivity
      * This is the button that we display on UIs that don't have an action bar. This button
      * calls up a list of news categories and switches to the given category.
      */
-    @Override
     public void onClick(View v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Select a Category");
         builder.setItems(CATEGORIES, new DialogInterface.OnClickListener() {
-            @Override
             public void onClick(DialogInterface dialog, int which) {
                 setNewsCategory(which);
             }

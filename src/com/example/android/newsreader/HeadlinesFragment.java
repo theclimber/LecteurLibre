@@ -105,7 +105,6 @@ public class HeadlinesFragment extends ListFragment implements OnItemClickListen
      *
      * This causes the configured listener to be notified that a headline was selected.
      */
-    @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (null != mHeadlineSelectedListener) {
             mHeadlineSelectedListener.onHeadlineSelected(position);

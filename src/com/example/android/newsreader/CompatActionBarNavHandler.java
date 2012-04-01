@@ -50,7 +50,6 @@ public class CompatActionBarNavHandler implements TabListener, OnNavigationListe
      *
      * This will cause a navigation event to be delivered to the configured listener.
      */
-    @Override
     public void onTabSelected(Tab tab, FragmentTransaction ft) {
         // TODO Auto-generated method stub
         mNavListener.onCategorySelected(tab.getPosition());
@@ -61,7 +60,6 @@ public class CompatActionBarNavHandler implements TabListener, OnNavigationListe
      *
      * This will cause a navigation event to be delivered to the configured listener.
      */
-    @Override
     public boolean onNavigationItemSelected(int itemPosition, long itemId) {
         mNavListener.onCategorySelected(itemPosition);
         return true;
@@ -72,7 +70,6 @@ public class CompatActionBarNavHandler implements TabListener, OnNavigationListe
      * Called by framework when a tab is re-selected. That is, it was already selected and is
      * tapped on again. This is not used in our app.
      */
-    @Override
     public void onTabReselected(Tab tab, FragmentTransaction ft) {
         // we don't care
     }
@@ -80,7 +77,6 @@ public class CompatActionBarNavHandler implements TabListener, OnNavigationListe
     /**
      * Called by framework when a tab is unselected. Not used in our app.
      */
-    @Override
     public void onTabUnselected(Tab tab, FragmentTransaction ft) {
         // we don't care
     }
