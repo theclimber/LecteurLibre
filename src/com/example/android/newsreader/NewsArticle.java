@@ -45,11 +45,7 @@ public class NewsArticle {
         StringBuilder sb = new StringBuilder();
         sb.append("<html><body>");
         sb.append("<h1>" + mHeadline + "</h1>");
-        int i;
-        for (i = 0; i < PARAGRAPHS_PER_ARTICLE; i++) {
-            sb.append("<p>").append(message.getDescription()).append("</p>");
-        }
-
+        sb.append("<p>").append(message.getDescription()).append("</p>");
         sb.append("</body></html>");
         mBody = sb.toString();
     }

@@ -68,7 +68,7 @@ public class NewsReaderActivity extends FragmentActivity
     NewsCategory mCurrentCat;
 
     // List of category titles
-    final String CATEGORIES[] = { "Top Stories", "Politics", "Economy", "Technology" };
+    final String CATEGORIES[] = { "Top Stories", "Politics", "Greg", "Technology" };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

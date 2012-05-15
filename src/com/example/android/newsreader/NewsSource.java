@@ -47,6 +47,7 @@ public class NewsSource {
     	categories = new HashMap<String, String>();
         categories.put("Popular", "http://www.planet-libre.org/feed.php?type=rss&tribe_id=popular");
         categories.put("All", "http://www.planet-libre.org/feed.php?type=rss");
+        categories.put("Greg", "http://blog.theclimber.be/?feed/rss2");
         mCategory = new ArrayList<NewsCategory>();
         for (String key : categories.keySet()) {
         	NewsCategory cat = new NewsCategory(key, categories.get(key));

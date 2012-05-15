@@ -48,6 +48,11 @@ public class AndroidSaxFeedParser extends BaseFeedParser {
 				currentMessage.setDate(body);
 			}
 		});
+		item.getChild(CONTENT).setEndTextElementListener(new EndTextElementListener(){
+			public void end(String body) {
+				currentMessage.setContent(body);
+			}
+		});
 		try {
 			Xml.parse(this.getInputStream(), Xml.Encoding.UTF_8, root.getContentHandler());
 		} catch (Exception e) {

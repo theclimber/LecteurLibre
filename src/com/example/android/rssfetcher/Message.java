@@ -13,6 +13,7 @@ public class Message implements Comparable<Message>{
 	private String title;
 	private URL link;
 	private String description;
+	private String content;
 	private Date date;
 
 	public String getTitle() {
@@ -42,6 +43,14 @@ public class Message implements Comparable<Message>{
 	public void setDescription(String description) {
 		this.description = description.trim();
 	}
+	
+	public String getContent() {
+		return content;
+	}
+	
+	public void setContent(String c) {
+		content = c.trim();
+	}
 
 	public String getDate() {
 		return FORMATTER.format(this.date);
@@ -65,6 +74,7 @@ public class Message implements Comparable<Message>{
 		copy.link = link;
 		copy.description = description;
 		copy.date = date;
+		copy.content = content;
 		return copy;
 	}
 	
@@ -82,6 +92,8 @@ public class Message implements Comparable<Message>{
 		sb.append('\n');
 		sb.append("Description: ");
 		sb.append(description);
+		sb.append('\n'+"Content: ");
+		sb.append(content);
 		return sb.toString();
 	}
 
@@ -116,6 +128,11 @@ public class Message implements Comparable<Message>{
 				return false;
 		} else if (!description.equals(other.description))
 			return false;
+		if (content == null) {
+			if (other.content != null)
+				return false;
+		} else if (!content.equals(other.content))
+			return false;
 		if (link == null) {
 			if (other.link != null)
 				return false;
@@ -132,6 +149,8 @@ public class Message implements Comparable<Message>{
 	public int compareTo(Message another) {
 		if (another == null) return 1;
 		// sort descending, most recent first
-		return another.date.compareTo(date);
+		if (another.link.equals(link))
+			return 1;
+		return 0;
 	}
 }
